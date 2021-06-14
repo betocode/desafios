@@ -14,14 +14,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/user/1",
+							"raw": "localhost:3000/user/7",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"user",
-								"1"
+								"7"
 							]
 						}
 					},
@@ -34,7 +34,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userDocument\":\"MzYxNDA3ODE4MzM=\",\r\n    \"creditCardToken\":\"YWJjMTIz\",\r\n    \"value\":5999\r\n}",
+							"raw": "{\r\n    \"userDocument\":\"MzYxNDA3ODE4MzM=\",\r\n    \"creditCardToken\":\"YWJjMTIz\",\r\n    \"value\":6000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -61,7 +61,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userDocument\":\"MzYxNDA3ODE4MzM=\",\r\n    \"creditCardToken\":\"YWJjMTIz\",\r\n    \"value\":5999\r\n}",
+							"raw": "{\r\n    \"userDocument\":\"MzYxNDA3ODE4MzM=\",\r\n    \"creditCardToken\":\"YWJjMTIzzzzzzzzzaaaaaaaaaa\",\r\n    \"value\":7999\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -69,14 +69,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/user/1",
+							"raw": "localhost:3000/user/7",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"user",
-								"1"
+								"7"
 							]
 						}
 					},
@@ -88,14 +88,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/user/1",
+							"raw": "localhost:3000/user/2",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"user",
-								"1"
+								"2"
 							]
 						}
 					},
