@@ -16,8 +16,8 @@ class UserService {
       creditCardToken,
       value,
     });
-    await _userRepository.InsertUser(entity);
-    return true;
+    const result = await _userRepository.InsertUser(entity);
+    return result;
   }
 
   async updateUserById({ userDocument, creditCardToken, value, id }) {

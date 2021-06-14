@@ -1,7 +1,6 @@
 const table = "user";
 
 const database = require("../database/db");
-const userEntity = require("../entities/userEntity");
 
 class UserRepository {
   async InsertUser({ userDocument, creditCardToken, value }) {
@@ -10,7 +9,7 @@ class UserRepository {
 
     await db.beginTransaction();
 
-    const result = await db.query(query, [
+    const [rows, fields] = await db.query(query, [
       userDocument,
       creditCardToken,
       value,
@@ -18,7 +17,8 @@ class UserRepository {
     ]);
     await db.commit();
     db.destroy();
-    return true;
+    console.log(rows);
+    return rows.insertId;
   }
 
   async GetUserById({ Id }) {

@@ -16,7 +16,7 @@ class UserController {
     try {
       const result = await _userService.createUser(req.body);
 
-      return res.status(200).json(true);
+      return res.status(200).json({ Id: result });
     } catch (ex) {
       return res
         .status(400)
