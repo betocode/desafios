@@ -21,18 +21,30 @@ class UserService {
   }
 
   async updateUserById({ userDocument, creditCardToken, value, id }) {
-    const entity = this.generateEncryptedUser({
+    const entity = await this.generateEncryptedUser({
       userDocument,
       creditCardToken,
       value,
     });
     entity.id = id;
-    return true;
+    const result = await _userRepository.UpdateUserById({
+      userDocument: entity.userDocument,
+      creditCardToken: entity.creditCardToken,
+      value,
+      id,
+    });
+    if (!result) {
+      throw Error("Não foi possivel atualizar o usuário");
+    }
+    return result;
   }
 
   async deleteUserById({ id }) {
-    await _userRepository.DeleteUserById({ Id: id });
-    return true;
+    const result = await _userRepository.DeleteUserById({ Id: id });
+    if (!result) {
+      throw Error("Não foi possivel atualizar o usuário");
+    }
+    return result;
   }
 
   async generateEncryptedUser({ userDocument, creditCardToken, value }) {

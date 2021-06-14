@@ -34,7 +34,9 @@ class UserRepository {
     const [rows, fields] = await db.query(query, [Id]);
 
     db.destroy();
-
+    if (rows.length <= 0) {
+      throw new Error("Usuário não encontrado");
+    }
     if (rows && rows.length > 0) {
       // objResult = new userEntity(result[0]);
       objResult.id = rows[0].id;
@@ -47,24 +49,28 @@ class UserRepository {
 
   async DeleteUserById({ Id }) {
     const date = new Date();
-    const query = `update ${table} set active = 0,removedDate = ? where id =? `;
+    const query = `update ${table} set active = 0,removedDate = ? where id =? and active = 1 `;
     const db = await database();
     await db.beginTransaction();
 
-    const result = await db.query(query, [date, Id]);
+    const [rows, fields] = await db.query(query, [date, Id]);
     await db.commit();
     db.destroy();
-    return true;
+    if (rows.affectedRows) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   async UpdateUserById({ userDocument, creditCardToken, value, id }) {
     const date = new Date();
-    const query = `update ${table} set userDocument = ? , creditCardToken = ? , value = ?,updatedDate = ? where id = ?`;
+    const query = `update ${table} set userDocument = ? , creditCardToken = ? , value = ?,updatedDate = ? where id = ? and active = 1`;
 
     const db = await database();
     await db.beginTransaction();
 
-    const result = await db.query(query, [
+    const [rows, fields] = await db.query(query, [
       userDocument,
       creditCardToken,
       value,
@@ -73,7 +79,11 @@ class UserRepository {
     ]);
     await db.commit();
     db.destroy();
-    return true;
+    if (rows.affectedRows) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 
