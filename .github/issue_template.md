@@ -12,27 +12,27 @@ ATENÇÃO: Remova os comentários HTML abaixo e preencha com os seus dados.
 
 5) Se quiser, deixe seu contato, twitter, canal no youtube... Caso não queira, remova o subtitulo "Contato" 
 
-============================ --> 
+============================ -->
 
-## Repositório do desafio 
+## Repositório do desafio
 
-<!-- Coloque a url do seu repositório aqui --> 
+<!-- Coloque a url do seu repositório aqui -->
 
-## Stack 
+## Stack
 
 <!-- 
 - NodeJs 
 - MongoDB 
 - RabbitMQ 
---> 
+-->
 
-## Comentários 
+## Comentários
 
-<!-- Cite a razão de suas principais decisões, se teve alguma dúvida ou se está com alguma dificuldade. --> 
+<!-- Cite a razão de suas principais decisões, se teve alguma dúvida ou se está com alguma dificuldade. -->
 
+<!-- OPCIONAL ! Retirar a linha abaixo caso nao queira colocar contato -->
 
-<!-- OPCIONAL ! Retirar a linha abaixo caso nao queira colocar contato --> 
-## Contato 
+## Contato
 
-<!-- Me segue no tt <3 https://twitter.com/BackendBrasil --> 
+<!-- Me segue no tt <3 https://twitter.com/BackendBrasil -->
 <!-- E acompanhe meu blog http://backendbrasil.com.br/-->
